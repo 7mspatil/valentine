@@ -1,19 +1,36 @@
+/* FULL PAGE PINK ANIMATED BACKGROUND */
 body {
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    background: linear-gradient(
+        -45deg,
+        #ff5f9e,
+        #ff85b3,
+        #ffc3d8,
+        #ff5f9e
+    );
+    background-size: 400% 400%;
+    animation: bgMove 10s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
 }
 
+/* BACKGROUND ANIMATION */
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* CARD */
 .container {
     background: white;
     padding: 50px;
     border-radius: 25px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
 }
 
 h1 {
@@ -25,14 +42,15 @@ h1 {
     margin-top: 50px;
     position: relative;
     height: 180px;
-    width: 500px;        /* BIG distance */
+    width: 520px;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* BUTTON COMMON */
 button {
     font-size: 20px;
-    padding: 15px 35px;  /* space inside buttons */
+    padding: 16px 40px;
     border: none;
     border-radius: 40px;
 }
@@ -50,7 +68,7 @@ button {
 
 /* NO BUTTON */
 .no {
-    background: gray;
+    background: #999;
     color: white;
     position: absolute;
     right: 0;
@@ -58,7 +76,7 @@ button {
     cursor: not-allowed;
 }
 
-/* MESSAGE AFTER YES */
+/* MESSAGE */
 #message {
     margin-top: 30px;
     font-size: 24px;
@@ -66,7 +84,7 @@ button {
     opacity: 0;
 }
 
-/* POP ANIMATION */
+/* MESSAGE POP ANIMATION */
 @keyframes pop {
     0% {
         transform: scale(0);
